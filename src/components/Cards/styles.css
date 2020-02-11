@@ -1,0 +1,196 @@
+.App-slider {
+	margin-top: 15vh;
+	height: fit-content;
+}
+
+.App-slider .App-slider-buttons {
+	display: flex;
+	justify-content: space-between;
+}
+
+.App-slider .App-slider-buttons .slider-btn {
+	position: relative;
+	background: none;
+	font-size: 30pt;
+	border: none;
+	outline: none;
+	opacity: .6;
+}
+
+.App-slider .App-slider-buttons button[disabled] {
+	opacity: .2;
+	cursor: default;
+}
+
+.button-animation {
+	transition: all 175ms ease-in-out;
+}
+
+button.btn-l.button-animation:enabled:active {
+	transform: translateX(-10px);
+}
+
+button.btn-r.button-animation:enabled:active {
+	transform: translateX(10px);
+}
+
+.App-card {
+	font-family: Gilroy Bold;
+	background-color: rgba(0, 0, 0, .1);
+	border-radius: 3px;
+
+	display: flex;
+	transition: all 200ms ease-out;
+}
+
+.App-card .card-info {
+	width: fit-content;
+	height: fit-content;
+}
+
+.App-card .card-title {
+	color: rgba(0, 0, 0, 1);
+}
+
+.App-card .card-desc {
+	font-family: Google Sans Regular;
+	color:  rgba(0, 0, 0, .6);
+}
+
+.App-card div  {
+	height: 100%;
+}
+
+.App-card .cbtn {
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+}
+
+.App-card div .card-button {
+	background-color: rgba(0, 0, 0, .2);
+	border-radius: 5px;
+
+	display: flex;
+	justify-content: center;
+}
+
+.App-card div .card-button a {
+	font-family: Gilroy Bold;
+	color: rgba(0, 0, 0, .8);
+	text-decoration: none;
+
+	margin-top: auto;
+	margin-bottom: auto;
+}
+
+.App-card .App-card-logo {
+	margin-left: auto;
+	opacity: .7;
+}
+
+@media screen and (max-width: 700px) {
+	.App-slider {
+		width: 100%;
+	}
+	
+	.App-slider .App-slider-buttons .btn-l {
+		left: 5px;
+	}
+	
+	.App-slider .App-slider-buttons .btn-r {
+		right: 5px;
+	}
+
+	.App-card {
+		width: 75vw;
+		height: 15vh;
+	}
+
+	.App-card .card-title {
+		text-align: left;
+		font-size: 12pt;
+	
+		padding-top: 10px;
+		padding-left: 10px;
+	}
+
+	.App-card .card-desc {
+		text-align: start;
+		font-size: 10pt;
+
+		padding-top: 3px;
+		padding-left: 10px;
+	}
+
+	.App-card .cbtn {
+		width: max-content;
+		height: 50%;
+	}
+
+	.App-card div .card-button {
+		margin-left: 20px;
+	
+		width: 125px;
+		height: 25px;
+	}
+
+	.App-card .App-card-logo {
+		font-size: 20pt;
+	
+		margin-right: 10px;
+		margin-top: 10px;
+	}
+}
+
+@media screen and (min-width: 701px) {
+	.App-slider {
+		width: 70%;
+	}
+
+	.App-slider .App-slider-buttons .btn-l {
+		left: 0;
+	}
+	
+	.App-slider .App-slider-buttons .btn-r {
+		right: 0;
+	}
+
+	.App-card {
+		width: 30vw;
+		height: 25vh;
+	}
+
+	.App-card .card-title {
+		font-size: 2vw;
+
+		padding-top: 15px;
+		padding-left: 15px;
+	}
+
+	.App-card .card-desc {
+		font-size: 1.5vw;
+
+		padding-top: 3px;
+		padding-left: 15px;
+	}
+
+	.App-card .cbtn {
+		width: max-content;
+		height: 40%;
+	}
+
+	.App-card div .card-button {
+		margin-left: 40px;
+	
+		width: 130px;
+		height: 30px;
+	}
+
+	.App-card .App-card-logo {
+		font-size: 35pt;
+	
+		margin-right: 20px;
+		margin-top: 20px;
+	}
+}
