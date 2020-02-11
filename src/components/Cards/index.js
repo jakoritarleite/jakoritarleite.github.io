@@ -66,14 +66,16 @@ class Display extends React.Component {
 		console.log('Button param: ', param)
 		
 		if (param === 'next' && this.state.currentCard < this.state.cardsLength) {
-			this.setState({ currentCard: this.state.currentCard + 1 });
+			this.setState({ 
+				currentCard: this.state.currentCard + 1,
+				currentCardContent: this.state.repos[this.state.currentCard + 1]  
+			});
 		} else if (param === 'prev' && this.state.currentCard > 0) {
-			this.setState({ currentCard: this.state.currentCard - 1 });
+			this.setState({ 
+				currentCard: this.state.currentCard - 1,
+				currentCardContent: this.state.repos[this.state.currentCard - 1]  
+			});
 		}
-
-		this.setState({ currentCardContent: this.state.repos[this.state.currentCard] });
-
-		console.log('Current Card: ', this.state.currentCard);
 	}
 
 	async UNSAFE_componentWillMount() {
