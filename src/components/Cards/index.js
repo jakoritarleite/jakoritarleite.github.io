@@ -10,7 +10,7 @@ async function APIResponse() {
 					name: repo.name, 
 					id: repo.id,
 					description: repo.description,
-					url: repo.url
+					url: repo.html_url
 				};
 		} else {
 			return true;
@@ -37,7 +37,23 @@ class Cards extends React.Component {
 		let card;
 
 		if(this.state.currentCardContent !== undefined) {
-			card = <div className="card" id="card" key={this.state.currentCardContent.id}><p className="title">{this.state.currentCardContent.name}</p><p className="desc">{this.state.currentCardContent.description}</p><a href={this.state.currentCardContent.url}>Visit</a></div>;
+			card = <div className="App-card" id="card" key={this.state.currentCardContent.id}>
+						<div className="App-card-info">
+							<div className="card-info">
+								<h1 className="card-title">{this.state.currentCardContent.name}</h1>
+								<h4 className="card-desc">{this.state.currentCardContent.description}</h4>
+							</div>
+							<div className="cbtn">
+								<div className="card-button" >
+									<a href={this.state.currentCardContent.url} target="_blank" rel="noopener noreferrer">Visit this repo</a>
+								</div>
+							</div>
+						</div>
+						<div className="App-card-logo">
+							<ion-icon name="logo-github"></ion-icon>
+						</div>
+					</div>;
+					
 		} else if (this.state.currentCardContent === undefined) {
 			card = <p>Waiting for API response</p>;
 		}
@@ -62,20 +78,13 @@ class Display extends React.Component {
 		}
 	}
 
-	handleClick(param) {
-		console.log('Button param: ', param)
-		
-		if (param === 'next' && this.state.currentCard < this.state.cardsLength) {
-			this.setState({ 
-				currentCard: this.state.currentCard + 1,
-				currentCardContent: this.state.repos[this.state.currentCard + 1]  
-			});
-		} else if (param === 'prev' && this.state.currentCard > 0) {
-			this.setState({ 
-				currentCard: this.state.currentCard - 1,
-				currentCardContent: this.state.repos[this.state.currentCard - 1]  
-			});
+	handleClick(param, currentCard) {
+		if (param === 'next' && currentCard < this.state.cardsLength - 1) {
+		  currentCard += 1;
+		} else if (param === 'prev' && currentCard > 0) {
+		  currentCard -= 1;
 		}
+		this.setState({ currentCard, currentCardContent: this.state.repos[currentCard] });
 	}
 
 	async UNSAFE_componentWillMount() {
@@ -92,13 +101,15 @@ class Display extends React.Component {
 	}
 
 	render() {
+		const { currentCard } = this.state;
+
 		return (
-			<div className="cards-slider">
-				<div className="slider-btns">
-					<button className="slider-btn btn-l" onClick={() => this.handleClick('next')}>&lt;</button>
-					<button className="slider-btn btn-r" onClick={() => this.handleClick('prev')}>&gt;</button>
+			<div className="App-slider">
+				<div className="App-slider-buttons">
+					<button disabled={this.state.currentCard === this.state.cardsLength - 1} className="slider-btn btn-l button-animation" onClick={() => this.handleClick('next', currentCard)}><ion-icon name="chevron-back-circle"></ion-icon></button>
+					<Cards currentCardContent = { this.state.currentCardContent }/>
+					<button disabled={this.state.currentCard === 0} className="slider-btn btn-r button-animation" onClick={() => this.handleClick('prev', currentCard)}><ion-icon name="chevron-forward-circle"></ion-icon></button>
 				</div>
-				<Cards currentCardContent = { this.state.currentCardContent }/>
 			</div>
 		);
 	}
