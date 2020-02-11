@@ -27,6 +27,12 @@
 	color: #87B38D;
 }
 
+.App-cards {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+
 @media screen and (max-width: 700px) {
 	.App-main {
 		margin-top: 20vh;

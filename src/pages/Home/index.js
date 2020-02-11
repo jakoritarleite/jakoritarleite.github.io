@@ -26,7 +26,7 @@ export default class Home extends Component {
 						<div className="bottom-shape"></div>
 					</div>
 				</div>
-				<div className="side">
+				<div className="App-cards side">
 					<Cards />
 				</div>
 			</main>
