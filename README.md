@@ -1,6 +1,6 @@
-# [Twitter Bot](https://twitter.com/hardillect) [![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social&logo=twitter)](https://twitter.com/koritarsa)
+# [Portfolio](https://jakoritarleite.github.io/) [![Tweet](https://img.shields.io/twitter/url/http/shields.io.svg?style=social&logo=twitter)](https://twitter.com/koritarsa)
 
-![version](https://img.shields.io/badge/version-2.0.0-blue.svg?style=flat)
+![version](https://img.shields.io/badge/version-2.0.0rc2-blue.svg?style=flat)
 ![licence](https://img.shields.io/badge/licence-MIT-blue.svg?style=flat)
 ![issues](https://img.shields.io/badge/issues-all%20open-green?style=flat)
 ![issues closed](https://img.shields.io/badge/closed%20issues-0-green.svg?style=flat)
@@ -76,7 +76,7 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 * [React.js](https://reactjs.org/) - A JavaScript library for building user interfaces
 * [yarn](https://yarnpkg.com/) - The package manager
 * [Visual Studio Code](https://code.visualstudio.com/) - Used to code
-* [GitHub API](https://api.github.com) - To send and post the image on account
+* [GitHub API] (https://api.github.com) - To send and post the image on account
 
 ## Versioning
 
