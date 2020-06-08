@@ -76,7 +76,7 @@ See the section about [deployment](https://facebook.github.io/create-react-app/d
 * [React.js](https://reactjs.org/) - A JavaScript library for building user interfaces
 * [yarn](https://yarnpkg.com/) - The package manager
 * [Visual Studio Code](https://code.visualstudio.com/) - Used to code
-* [GitHub API] (https://api.github.com) - To send and post the image on account
+* [GitHub API](https://api.github.com) - To send and post the image on account
 
 ## Versioning
 
